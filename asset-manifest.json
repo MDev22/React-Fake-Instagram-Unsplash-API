@@ -1,23 +1,20 @@
 {
   "files": {
-    "main.css": "/React-Fake-Instagram-Unsplash-API/static/css/main.a617e044.chunk.css",
-    "main.js": "/React-Fake-Instagram-Unsplash-API/static/js/main.13b76aac.chunk.js",
-    "main.js.map": "/React-Fake-Instagram-Unsplash-API/static/js/main.13b76aac.chunk.js.map",
-    "runtime-main.js": "/React-Fake-Instagram-Unsplash-API/static/js/runtime-main.ce9d180f.js",
-    "runtime-main.js.map": "/React-Fake-Instagram-Unsplash-API/static/js/runtime-main.ce9d180f.js.map",
-    "static/js/2.1de11542.chunk.js": "/React-Fake-Instagram-Unsplash-API/static/js/2.1de11542.chunk.js",
-    "static/js/2.1de11542.chunk.js.map": "/React-Fake-Instagram-Unsplash-API/static/js/2.1de11542.chunk.js.map",
-    "static/js/3.8120d9ca.chunk.js": "/React-Fake-Instagram-Unsplash-API/static/js/3.8120d9ca.chunk.js",
-    "static/js/3.8120d9ca.chunk.js.map": "/React-Fake-Instagram-Unsplash-API/static/js/3.8120d9ca.chunk.js.map",
+    "main.css": "/React-Fake-Instagram-Unsplash-API/static/css/main.09c4d203.chunk.css",
+    "main.js": "/React-Fake-Instagram-Unsplash-API/static/js/main.1e5ae853.chunk.js",
+    "main.js.map": "/React-Fake-Instagram-Unsplash-API/static/js/main.1e5ae853.chunk.js.map",
+    "runtime-main.js": "/React-Fake-Instagram-Unsplash-API/static/js/runtime-main.2ca2ba66.js",
+    "runtime-main.js.map": "/React-Fake-Instagram-Unsplash-API/static/js/runtime-main.2ca2ba66.js.map",
+    "static/js/2.383c9ec7.chunk.js": "/React-Fake-Instagram-Unsplash-API/static/js/2.383c9ec7.chunk.js",
+    "static/js/2.383c9ec7.chunk.js.map": "/React-Fake-Instagram-Unsplash-API/static/js/2.383c9ec7.chunk.js.map",
     "index.html": "/React-Fake-Instagram-Unsplash-API/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/React-Fake-Instagram-Unsplash-API/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.1de11542.chunk.js.LICENSE.txt": "/React-Fake-Instagram-Unsplash-API/static/js/2.1de11542.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/React-Fake-Instagram-Unsplash-API/static/media/logo.6ce24c58.svg"
+    "static/css/main.09c4d203.chunk.css.map": "/React-Fake-Instagram-Unsplash-API/static/css/main.09c4d203.chunk.css.map",
+    "static/js/2.383c9ec7.chunk.js.LICENSE.txt": "/React-Fake-Instagram-Unsplash-API/static/js/2.383c9ec7.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ce9d180f.js",
-    "static/js/2.1de11542.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.13b76aac.chunk.js"
+    "static/js/runtime-main.2ca2ba66.js",
+    "static/js/2.383c9ec7.chunk.js",
+    "static/css/main.09c4d203.chunk.css",
+    "static/js/main.1e5ae853.chunk.js"
   ]
 }
