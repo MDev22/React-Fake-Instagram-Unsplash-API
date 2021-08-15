@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="23px" viewBox="0 0 24 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_back</title>
+    <g id="Progetto_Instagram" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Esercizio_2_Profile" transform="translate(-15.000000, -63.000000)" fill="#1A1A1A" fill-rule="nonzero">
+            <g id="header" transform="translate(15.000000, 61.000000)">
+                <g id="icon_back" transform="translate(0.000000, 2.000000)">
+                    <path d="M11.25,22.5 C11.05,22.5 10.861,22.422 10.72,22.28 L0.22,11.78 C0.15,11.71 0.095,11.628 0.057,11.535 C0.054,11.527 0.05,11.518 0.047,11.509 C0.016,11.424 0,11.338 0,11.25 C0,11.161 0.016,11.074 0.048,10.989 C0.05,10.982 0.053,10.975 0.056,10.968 C0.096,10.871 0.151,10.789 0.222,10.719 L10.72,0.22 C10.862,0.078 11.05,0 11.25,0 C11.45,0 11.639,0.078 11.78,0.22 C11.922,0.361 12,0.55 12,0.75 C12,0.95 11.922,1.139 11.78,1.28 L2.56,10.5 L23.25,10.5 C23.664,10.5 24,10.836 24,11.25 C24,11.664 23.664,12 23.25,12 L2.561,12 L11.781,21.22 C12.073,21.512 12.073,21.988 11.781,22.281 C11.639,22.422 11.45,22.5 11.25,22.5 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
