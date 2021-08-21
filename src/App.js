@@ -6,16 +6,8 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <nav>
-            <ul className="navbar-nav mr-auto">
-              <li><Link to={'/'} className="nav-link"> Home </Link></li>
-            </ul>
-          </nav>
-          <Switch>
-            <Route exact path='/' component={Home} />
-          </Switch>
-        </div>
+        {/* if path is PUBLIC_URL => Homepage */}
+        <Route exact path={process.env.PUBLIC_URL} component={Home} />
       </Router>
     );
   }
