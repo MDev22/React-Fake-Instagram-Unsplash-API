@@ -1,16 +1,25 @@
 @import "variable";
 @import "animation";
 
-*{box-sizing: border-box;}
+/* GENERAL STYLES */
+*{-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
 .contain{width: 100%; max-width: 1170px; height: auto; overflow: hidden; display: block; position: relative; margin: 0 auto;}
+.wrapper{height: auto; display: block; overflow: hidden; width: 100%;}
+body{font-family: $font; padding: 0; padding-bottom: 35px; margin: 0; font-size: 16px; line-height: 28px; color: $textcolor;}
+.message{
+    text-align: center; color: $secondarytextcolor; font-size: 14px; font-weight: 400; margin: 50px 0;
+    &.error{color: $error;}
+}
 
-body{font-family: $font; padding: 0; margin: 0;}
+/* HEADER */
 header{
     padding: 55px 0;
     .logo{
         img{height: 35px; width: auto;}
     }
 }
+
+/* FOOTER */
 footer{
     position: fixed; left: 0; bottom: 0; width: 100%; padding: 10px 15px; text-align: center; font-size: 12px; color: $secondarytextcolor; border-top: .5px solid $bordercolor; background-color: $white;
     a{color: $maincolor; text-decoration: none; font-weight: 700;}
@@ -18,10 +27,11 @@ footer{
 
 /* STORIES */
 .stories{
+    .message{margin: 0; margin-bottom: 15px; text-align: left;}
     .story{
         text-align: center;
         img{width: 100%; height: auto; max-width: 90px; margin: 0 auto; display: block;}
-        p{margin: 0; margin-top: 10px; font-size: 14px; color: $secondarytextcolor;}
+        p{margin: 0; margin-top: 10px; font-size: 14px; color: $secondarytextcolor; line-height: 13px;}
     }
 }
 
@@ -38,9 +48,47 @@ footer{
 
 /* FEED */
 .feed{
-    .message{
-        text-align: center; color: $secondarytextcolor; font-size: 14px; font-weight: 400;
-        &.error{color: $error;}
+    .photo{
+        margin-top: 70px;
+        .author{
+            text-align: left; ;
+            img{width: 40px; height: 40px; display: inline-block; margin-right: 15px; border-radius: 50%;}
+            h3{
+                display: inline-block; line-height: 40px; font-size: 16px; font-weight: 600; width: calc(100% - 55px); margin: 0;
+                a{
+                    color: $textcolor; text-decoration: none; width: 100%; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; transition: $transitionSpeed;
+                    &:hover{color: $maincolor; transition: $transitionSpeed;}
+                }
+            }
+        }
+        figure{
+            margin: 0; padding: 0 56px;
+            img{
+                width: 100%; height: auto; transition: $transitionSpeed;
+                &:hover{transition: $transitionSpeed; transform: scale(0.98); transform-origin: center;}
+            }
+            figcaption, .reactions{padding-left: 15px; padding-right: 15px;}
+            figcaption{
+                padding: 0 15px;
+                .read-more-less--more, .read-more-less--less{display: inline-block; margin-left: 5px; color: $maincolor; cursor: pointer;}
+            }
+            .reactions{
+                padding-top: 20px; padding-bottom: 20px; display: flex;
+                .reactions-controls, .reactions-stats{flex: 2;}
+                .reactions-controls{
+                    text-align: left;
+                    .control{
+                        display: flex; cursor: pointer; margin-right: 30px;
+                        img{
+                            width: 24px; height: auto; transition: $transitionSpeed;
+                            &:hover{transition: $transitionSpeed; transform-origin: center; transform: scale(1.2);}
+                        }
+                        &:last-of-type{margin-right: 0;}
+                    }
+                }
+                .reactions-stats{color: $secondarytextcolor; font-size: 14px; line-height: 25px; text-align: right;}
+            }
+        }
     }
 }
 

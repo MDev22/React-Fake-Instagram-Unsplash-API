@@ -1,6 +1,7 @@
 import React, {Component, useState, useEffect} from 'react';
 import {createApi} from 'unsplash-js';
 import InfiniteScroll from "react-infinite-scroll-component";
+import Photo from './Photo';
 
 /*
     The feed is the main section of homepage.
@@ -21,7 +22,6 @@ let FeedFunctionalComponent = (props) => {
 
     const fetchImages = (apikey = props.apikey) => {
         if (items.length >= maxresults && hasMore === true) {
-            console.log('entro qui');
             setHasMore(false);
             return;
         }
@@ -58,7 +58,6 @@ let FeedFunctionalComponent = (props) => {
                 dataLength = {items.length}
                 next = {() => fetchImages()}
                 hasMore = {hasMore}
-                height = '100'
                 loader = {
                 <div className="lds-ring">
                     <div></div>
@@ -70,9 +69,7 @@ let FeedFunctionalComponent = (props) => {
                 endMessage = {<p className="message">{process.env.REACT_APP_END_FEED_MESSAGE}</p>}
             >
                 {items.map((item, index) => (
-                    <div key={index} className="single-feed">
-                        Sono {item.id} con hasMore {hasMore.toString()}
-                    </div>
+                    <Photo key={index} item={item} />
                 ))}
             </InfiniteScroll>
 
@@ -84,7 +81,7 @@ let FeedFunctionalComponent = (props) => {
 class Feed extends Component {
     render() {
         return (
-            <FeedFunctionalComponent apikey={this.props.apikey}></FeedFunctionalComponent>
+            <FeedFunctionalComponent apikey={this.props.apikey} />
         );
     }
 }

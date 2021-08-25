@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <!-- FAVICON -->
-    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="%PUBLIC_URL%/favicon/android-chrome-192x192.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon/favicon-16x16.png" />
-    <!-- MANIFEST - PWA -->
-    <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest" />
-    <meta name="msapplication-TileColor" content="#%REACT_APP_MAIN_COLOR%" />
-    <meta name="theme-color" content="#%REACT_APP_THEME_COLOR%" />
-    <!-- SEO -->    
-    <meta name="description" content="%REACT_APP_DEFAULT_DESCRIPTION%" />
-    <title>%REACT_APP_DEFAULT_TITLE%</title>
-    <!-- OPEN GRAPH -->
-    <meta property="og:title" content="%REACT_APP_DEFAULT_TITLE%" />
-    <meta property="og:description" content="%REACT_APP_DEFAULT_DESCRIPTION%" />
-    <meta property="og:image" content="%PUBLIC_URL%/media/images/foto_home_1.png" />
-    <meta property="og:url" content="%PUBLIC_URL%" />
-    <meta name="twitter:title" content="%REACT_APP_DEFAULT_TITLE%" />
-    <meta name="twitter:description" content="%REACT_APP_DEFAULT_DESCRIPTION%" />
-    <meta name="twitter:image" content="%PUBLIC_URL%/media/images/foto_home_1.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <footer>Powered by <a title="Powered By Maurizio Grieco" target="_blank" href="https://github.com/MDev22">MDev22</a></footer>
-  </body>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta charset="utf-8" />
+		<!-- FAVICON -->
+		<link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/favicon/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="192x192" href="%PUBLIC_URL%/favicon/android-chrome-192x192.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon/favicon-16x16.png" />
+		<!-- MANIFEST - PWA -->
+		<link rel="manifest" href="%PUBLIC_URL%/site.webmanifest" />
+		<meta name="msapplication-TileColor" content="#%REACT_APP_MAIN_COLOR%" />
+		<meta name="theme-color" content="#%REACT_APP_THEME_COLOR%" />
+		<!-- SEO -->
+		<meta name="description" content="%REACT_APP_DEFAULT_DESCRIPTION%" />
+		<title>%REACT_APP_DEFAULT_TITLE%</title>
+		<!-- OPEN GRAPH -->
+		<meta property="og:title" content="%REACT_APP_DEFAULT_TITLE%" />
+		<meta property="og:description" content="%REACT_APP_DEFAULT_DESCRIPTION%" />
+		<meta property="og:image" content="%PUBLIC_URL%/media/images/foto_home_1.png" />
+		<meta property="og:url" content="%PUBLIC_URL%" />
+		<meta name="twitter:title" content="%REACT_APP_DEFAULT_TITLE%" />
+		<meta name="twitter:description" content="%REACT_APP_DEFAULT_DESCRIPTION%" />
+		<meta name="twitter:image" content="%PUBLIC_URL%/media/images/foto_home_1.png" />
+		<meta name="twitter:card" content="summary_large_image" />
+	</head>
+	<body itemscope itemtype="http://schema.org/WebPage">
+		<main role="main" itemscope itemprop="mainContentOfPage">
+			<div id="root"></div>
+		</main>
+		<footer role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+			Powered by
+			<a title="Powered By Maurizio Grieco" target="_blank" href="https://github.com/MDev22">
+				<span itemprop="copyrightHolder" itemscope itemtype="http://schema.org/Person">
+					<span itemprop="name">MDev22</span>
+				</span>
+			</a>
+		</footer>
+	</body>
 </html>

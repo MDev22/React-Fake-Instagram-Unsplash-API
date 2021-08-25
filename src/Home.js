@@ -9,7 +9,7 @@ class Home extends Component {
             [
                 <HeaderInternal />,
                 <Stories />,
-                <Feed apikey='10bH_IgwPVlQKaTAYIFVLn4UJt5oofIIpZ4n5iYa0Zo' />
+                <Feed apikey={process.env.REACT_APP_UNSPLASH_APPLICATION_ID} />
             ]
         );
     }
