@@ -2,45 +2,44 @@ import React, {Component, useEffect, useState} from 'react';
 import {createApi} from 'unsplash-js';
 import {useParams} from 'react-router-dom';
 import ErrorMessage from './utility/ErrorMessage';
-import UserTile from './components/User/UserTile';
-import UserFeed from './components/User/UserFeed';
 import UserHeader from './components/User/UserHeader';
 
-let UserFunctionalComponent = (props) => {
+let PhotoFunctionalComponent = (props) => {
     const params = useParams();
-    const [userLoaded, setUserLoaded] = useState(null);
-    const [user, setUser] = useState({});
+    const [photoLoaded, setPhotoLoaded] = useState(null);
+    const [photo, setPhoto] = useState({});
 
     useEffect(() => {
-        getUserInformation();
+        getPhotoInformation();
     }, []);
 
-    const getUserInformation = (apikey = props.apikey) => {
+    const getPhotoInformation = (apikey = props.apikey) => {
         const unsplash = createApi({
             accessKey: apikey
         });
         
-        unsplash.users.get(
-            {username: params.username}
+        unsplash.photos.get(
+            {photoId: params.photoid}
         ).then(result => {
             if (result.errors) {
-                console.error('Unsplash API Get user by username => Error occurred: ', result.errors[0]);
-                setUserLoaded(false);
+                console.error('Unsplash API Get photo by ID => Error occurred: ', result.errors[0]);
+                setPhotoLoaded(false);
             } else {
-                setUserLoaded(true);
-                setUser(result.response);
+                setPhotoLoaded(true);
+                setPhoto(result.response);
             }
         });    
     };
     
-    if (userLoaded === false) {
+    if (setPhotoLoaded === false) {
         return (
             <ErrorMessage />
         )
     } 
 
     return (
-        <div className="wrapper-user">
+        <div className="wrapper-photo">
+            {/*
             <UserHeader title={user.name} description={user.bio} />
             <div className="contain">
                 {typeof user.profile_image !== typeof undefined && (
@@ -60,16 +59,17 @@ let UserFunctionalComponent = (props) => {
             <div className="contain medium">
                 <UserFeed apikey={props.apikey} username={params.username}/>
             </div>
+            */}
         </div>
     );
 };
 
-class User extends Component {
+class Photo extends Component {
     render() {
         return (
-            <UserFunctionalComponent apikey={process.env.REACT_APP_UNSPLASH_APPLICATION_ID} /> 
+            <PhotoFunctionalComponent apikey={process.env.REACT_APP_UNSPLASH_APPLICATION_ID}/>
         );
     }
 }
 
-export default User;
+export default Photo;

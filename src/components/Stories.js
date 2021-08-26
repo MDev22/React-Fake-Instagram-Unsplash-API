@@ -12,7 +12,7 @@ let stories = Array.from(Array(storiescounter).keys());
 
 class Stories extends Component {
     render() {
-        var renderedStories = stories.map(index => 
+        let renderedStories = stories.map(index => 
             <SwiperSlide className="story" key={index}>
                 <img src={process.env.PUBLIC_URL + "/media/images/profilo_" + (index + 1) + ".png"} alt={"Name " + (index + 1)}/>
                 <p>Name {index + 1}</p>

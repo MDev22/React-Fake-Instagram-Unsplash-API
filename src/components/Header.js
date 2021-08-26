@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class HeaderInternal extends Component {
+class Header extends Component {
     render() {
         return (
             <header role="banner" itemscope itemtype="http://schema.org/WPHeader">
@@ -12,4 +12,4 @@ class HeaderInternal extends Component {
     }
 }
 
-export default HeaderInternal;
+export default Header;

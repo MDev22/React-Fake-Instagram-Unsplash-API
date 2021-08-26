@@ -1,55 +1,52 @@
-import React, {Component, useState, useEffect} from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import {createApi} from 'unsplash-js';
 import InfiniteScroll from "react-infinite-scroll-component";
-import Photo from './Photo';
+import Thumb from '../Feed/Tile/Thumb';
+import ErrorMessage from '../../utility/ErrorMessage';
 
-/*
-    The feed is the main section of homepage.
-    Is an infinite scroll system using Unsplash API to retrive photo and information.
-*/
+let UserFeedFunctionalComponent = (props) => {
+    console.log(props.username);
 
-let FeedFunctionalComponent = (props) => {
     const [items, setItems] = useState([]);
-    const [hasMore, setHasMore] = useState(true);
     const [page, setPage] = useState(0);
     const [loaded, setLoaded] = useState(null);
-    const maxresults = 10;
-    const perPage = 5;
+    const [hasMore, setHasMore] = useState(true);
+    const perPage = 10;
 
     useEffect(() => {
         fetchImages();
     }, []);
 
     const fetchImages = (apikey = props.apikey) => {
-        if (items.length >= maxresults && hasMore === true) {
-            setHasMore(false);
-            return;
-        }
-
         const unsplash = createApi({
             accessKey: apikey
         });
         
-        unsplash.photos.list(
+        unsplash.users.getPhotos(
             {
+                username: props.username,
                 perPage: perPage,
                 page: page + 1
             }
         ).then(result => {
             if (result.errors) {
-                console.error('Unsplash API Photo List => Error occurred: ', result.errors[0]);
+                console.error('Unsplash API Photo List by username => Error occurred: ', result.errors[0]);
                 setLoaded(false);
-            } else {
+            } else if (result.response.results.length > 0) {
                 setLoaded(true);
                 setPage(page + 1);
                 setItems(items.concat(result.response.results))
+            } else {
+                setHasMore(false);
+                return;
             }
         });    
     };
 
-    let errorMessage = '';
     if (loaded === false) {
-        errorMessage = (<p className="message error">{process.env.REACT_APP_UNSPLASH_API_ERROR_MESSAGE}</p>);
+        return (
+            <ErrorMessage />
+        )
     }
 
     return (
@@ -69,21 +66,21 @@ let FeedFunctionalComponent = (props) => {
                 endMessage = {<p className="message">{process.env.REACT_APP_END_FEED_MESSAGE}</p>}
             >
                 {items.map((item, index) => (
-                    <Photo key={index} item={item} />
+                    <Thumb key={index} photoid={item.id} username={item.user.username} alt={item.alt_description} thumbnail={item.urls.regular} reactions={false} linkable={true} />
                 ))}
             </InfiniteScroll>
-
-            {errorMessage}
         </section>
     );
 };
 
-class Feed extends Component {
+class UserFeed extends Component {
     render() {
         return (
-            <FeedFunctionalComponent apikey={this.props.apikey} />
+            <section className="user-feed">
+                <UserFeedFunctionalComponent apikey={this.props.apikey} username={this.props.username} />
+            </section>
         );
     }
 }
 
-export default Feed;
+export default UserFeed;

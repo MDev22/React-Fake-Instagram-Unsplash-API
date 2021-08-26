@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import HeaderInternal from './components/HeaderInternal';
+import Header from './components/Header';
 import Stories from './components/Stories';
-import Feed from './components/Feed';
+import Feed from './components/Feed/MainFeed';
 
 class Home extends Component {
     render() {
         return (
             [
-                <HeaderInternal />,
+                <Header />,
                 <Stories />,
                 <Feed apikey={process.env.REACT_APP_UNSPLASH_APPLICATION_ID} />
             ]

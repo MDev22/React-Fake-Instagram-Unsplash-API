@@ -1,7 +1,7 @@
 import React, {Component, useState} from 'react';
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import {Link} from 'react-router-dom';
-import useWindowDimensions from "../utility/WindowDimensions";
+import useWindowDimensions from "../../../utility/WindowDimensions";
 import Reaction from './Reaction';
 
 /*
@@ -45,10 +45,24 @@ class Thumb extends Component {
     render() {
         return (
             <figure className="thumbnail">
-                <Link to={process.env.PUBLIC_URL + "/photo/" + this.props.photoid}>
+                 {/*
+                    If linkable, print image as background.
+                    If not linkable, print image as img
+                */}
+
+                {this.props.linkable ? (
+                    <Link to={process.env.PUBLIC_URL + "/photo/" + this.props.username + "/" + this.props.photoid}>
+                        <img style={{display: "none"}} src={this.props.thumbnail} alt={this.props.alt}/>
+                        <div className="photo" style={{backgroundImage: "url(" + this.props.thumbnail + ")"}}></div>
+                    </Link>
+                ) : (
                     <img src={this.props.thumbnail} alt={this.props.alt}/>
-                </Link>
-                <Reaction photoid={this.props.photoid} likes={this.props.likes} />
+                )}
+
+                {this.props.reactions !== false && (
+                    <Reaction photoid={this.props.photoid} likes={this.props.likes} />
+                )}
+
                 <FigCaptionFunctionalComponent description={this.props.description} />
             </figure>
         );
