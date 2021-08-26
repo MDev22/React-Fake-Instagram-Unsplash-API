@@ -46,17 +46,19 @@ class Thumb extends Component {
         return (
             <figure className="thumbnail">
                  {/*
-                    If linkable, print image as background.
-                    If not linkable, print image as img
+                    If background, print image as background.
+                    If not background, print image as img
                 */}
 
-                {this.props.linkable ? (
+                {this.props.background ? (
                     <Link to={process.env.PUBLIC_URL + "/photo/" + this.props.username + "/" + this.props.photoid}>
                         <img style={{display: "none"}} src={this.props.thumbnail} alt={this.props.alt}/>
                         <div className="photo" style={{backgroundImage: "url(" + this.props.thumbnail + ")"}}></div>
                     </Link>
                 ) : (
-                    <img src={this.props.thumbnail} alt={this.props.alt}/>
+                    <Link to={process.env.PUBLIC_URL + "/photo/" + this.props.username + "/" + this.props.photoid}>
+                        <img src={this.props.thumbnail} alt={this.props.alt}/>
+                    </Link>
                 )}
 
                 {this.props.reactions !== false && (

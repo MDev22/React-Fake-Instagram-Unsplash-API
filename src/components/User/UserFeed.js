@@ -50,7 +50,7 @@ let UserFeedFunctionalComponent = (props) => {
     }
 
     return (
-        <section className="contain feed">
+        <section className="feed">
             <InfiniteScroll
                 dataLength = {items.length}
                 next = {() => fetchImages()}
@@ -66,7 +66,7 @@ let UserFeedFunctionalComponent = (props) => {
                 endMessage = {<p className="message">{process.env.REACT_APP_END_FEED_MESSAGE}</p>}
             >
                 {items.map((item, index) => (
-                    <Thumb key={index} photoid={item.id} username={item.user.username} alt={item.alt_description} thumbnail={item.urls.regular} reactions={false} linkable={true} />
+                    <Thumb key={index} photoid={item.id} username={item.user.username} alt={item.alt_description} thumbnail={item.urls.regular} reactions={false} background={true} />
                 ))}
             </InfiniteScroll>
         </section>

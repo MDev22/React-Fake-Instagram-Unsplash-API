@@ -16,6 +16,9 @@ let FeedFunctionalComponent = (props) => {
     const [loaded, setLoaded] = useState(null);
     const maxresults = 10;
     const perPage = 5;
+    const descriptionDemo = `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Donec dignissim, leo at fermentum lobortis, libero augue vehicula felis, a convallis lectus erat ac velit.
+                            Duis facilisis, justo sit amet pharetra porttitor, diam massa tincidunt erat, a faucibus tellus orci ac nulla.`;    
 
     useEffect(() => {
         fetchImages();
@@ -43,6 +46,16 @@ let FeedFunctionalComponent = (props) => {
             } else {
                 setLoaded(true);
                 setPage(page + 1);
+
+                /*
+                Delete this section, if you want.
+                To active the "show less/more" function, set a custom description for the first item.
+                This is for demonstration purposes.
+                */
+                if (result.response.results.length > 0) {
+                    result.response.results[0].description = descriptionDemo;
+                }
+
                 setItems(items.concat(result.response.results))
             }
         });    

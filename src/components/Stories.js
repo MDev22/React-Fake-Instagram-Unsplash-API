@@ -24,10 +24,13 @@ class Stories extends Component {
                 <p className="message">Stories. Static elements for UX purposes only</p>
                 <Swiper
                     spaceBetween = {30}
-                    slidesPerView = {5}
+                    slidesPerView = {4}
                     breakpoints = {
                         {
-                            991: {
+                            580: {
+                                slidesPerView: 5
+                            },
+                            768: {
                                 slidesPerView: 10
                             }
                         }

@@ -40,7 +40,7 @@ header{
     }
     &.user{
         padding-top: 30px; padding-bottom: 0; position: fixed; top: 0; left: 0; width: 100%; z-index: 99; background-color: $white;
-        h1{text-align: center; font-size: 24px; font-weight: 700; margin-top: 0; margin-bottom: 30px;}
+        h1{text-align: center; font-size: 24px; font-weight: 700; margin-top: 0; margin-bottom: 30px; text-transform: capitalize;}
     }
 }
 
@@ -151,10 +151,79 @@ footer{
 
 /* PHOTO DETAIL PAGE*/
 .wrapper-photo{
-    margin-bottom: 50px;
+    margin-bottom: 50px; padding-top: 90px;
     figure{
+        margin: 0;
         img{width: 100%; height: auto;}
     }
 }
 
 /* MEDIA QUERIES */
+@media only screen and (max-width: 1171px) {
+    header{padding: 25px 0;}
+    .contain{padding: 0 15px;}
+
+    .feed{
+        .infinite-scroll-component__outerdiv{width: calc(100% + 30px); margin-left: -15px;}
+        .user-tile{padding: 0 15px;}
+        .photo{
+            margin-top: 45px;
+            figure{padding: 0; margin-top: 15px;}
+            &:first-of-type{margin-top: 25px;}
+        }
+    }
+
+    .user-feed{
+        figure{
+            .photo{margin: 0 !important;}
+        }
+    }
+
+    .stories{
+        .story{
+            img{max-width: 68px;}
+            p{font-size: 12px;}
+        }
+    }
+}
+
+@media only screen and (max-width: 801px) {
+    .wrapper-photo{
+        figure{width: calc(100% + 30px); margin-left: -15px;}
+    }
+
+    .user-feed{
+        .infinite-scroll-component__outerdiv{width: calc(100% + 30px); margin-left: -15px;}
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .user-feed{
+        figure{width: 50%;}
+    }
+
+    .user-tile{
+        .user-stats{
+            div{
+                margin: 30px 15px 0 15px;
+                span{
+                    &.value{font-size: 20px;}
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .user-feed{
+        figure{height: 200px;}
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .user-tile{
+        .user-stats{
+            div{margin: 30px 10px 0 10px;}
+        }
+    }
+}

@@ -43,7 +43,7 @@ let PhotoFunctionalComponent = (props) => {
             <UserHeader title={params.username} description={photo.alt_description} />
             <section className="contain medium">
                 {typeof photo.urls !== typeof undefined && (
-                    <Thumb alt={photo.alt_description} thumbnail={photo.urls.full} description={photo.description} likes={photo.likes} />
+                    <Thumb alt={photo.alt_description} thumbnail={photo.urls.regular} description={photo.description} likes={photo.likes} />
                 )}
             </section>
         </div>
