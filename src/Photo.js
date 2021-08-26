@@ -3,6 +3,7 @@ import {createApi} from 'unsplash-js';
 import {useParams} from 'react-router-dom';
 import ErrorMessage from './utility/ErrorMessage';
 import UserHeader from './components/User/UserHeader';
+import Thumb from './components/Feed/Tile/Thumb';
 
 let PhotoFunctionalComponent = (props) => {
     const params = useParams();
@@ -31,7 +32,7 @@ let PhotoFunctionalComponent = (props) => {
         });    
     };
     
-    if (setPhotoLoaded === false) {
+    if (photoLoaded === false) {
         return (
             <ErrorMessage />
         )
@@ -39,27 +40,12 @@ let PhotoFunctionalComponent = (props) => {
 
     return (
         <div className="wrapper-photo">
-            {/*
-            <UserHeader title={user.name} description={user.bio} />
-            <div className="contain">
-                {typeof user.profile_image !== typeof undefined && (
-                    <div className="contain medium">
-                        <UserTile 
-                            avatar={user.profile_image.large}
-                            username={user.username}
-                            linkable={false}
-                            printStats={true}
-                            photos={user.total_photos}
-                            follower={user.followers_count}
-                            following={user.following_count}
-                        />
-                    </div>
+            <UserHeader title={params.username} description={photo.alt_description} />
+            <section className="contain medium">
+                {typeof photo.urls !== typeof undefined && (
+                    <Thumb alt={photo.alt_description} thumbnail={photo.urls.full} description={photo.description} likes={photo.likes} />
                 )}
-            </div>
-            <div className="contain medium">
-                <UserFeed apikey={props.apikey} username={params.username}/>
-            </div>
-            */}
+            </section>
         </div>
     );
 };
